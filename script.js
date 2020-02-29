@@ -1,13 +1,36 @@
+var questions = [
+    {
+        question: "your question 1",
+        answers: ["opt1", "opt2"],
+        correctAnswer: 1
+    },
+    {
+        question: "your question2",
+        answers: ["opt1", "opt2"],
+        correctAnswer: 1
+    }
+]
+
+var currentQuestion = 0;
+console.log(questions[currentQuestion].question)
+
 var startButton = document.getElementById('startBtn');
-console.log(startButton)
+
 startButton.addEventListener('click', function() {
-    console.log('test')
+    startGame()
 
 })
 
 function startGame() {
-
+var newP=document.createElement("p")
+newP.innerText=questions[currentQuestion].question
+// find notes on appendchild for id of question
+// put question on page 
+// put choices on page 
+// start timer 
 }
+
+ 
 
 function setNextQuestion() {
 
@@ -17,6 +40,8 @@ function selectAnswer() {
 
 }
 
+
+// timer 
 // <!-- <div id="timer">
 // <h2>Countdown</h2>
 // <p id="timerDisplay"></p>
