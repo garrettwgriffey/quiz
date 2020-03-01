@@ -1,3 +1,4 @@
+// questions and answers
 var questions = [
     {
         question: "Inside which HTML element do we put the Javascript?",
@@ -22,9 +23,11 @@ var questions = [
 ]
 
 var currentQuestion = 0;
-console.log(questions[currentQuestion].question)
+// console.log(questions[currentQuestion].question)
+var questionElement = document.getElementById('question');
+var answerButtonsElement = document.getElementById('answerButtons');
 
-var startButton = document.getElementById('startBtn');
+var startButton = document.getElementById('startButton');
 
 startButton.addEventListener('click', function() {
     startGame()
@@ -32,8 +35,11 @@ startButton.addEventListener('click', function() {
 })
 
 function startGame() {
-var newP=document.createElement("p")
-newP.innerText=questions[currentQuestion].question
+// var newP=document.createElement("p")
+// newP.innerText=questions[currentQuestion].question;
+    startButton.classList.add('hide');
+    questionContainerElement.classList.remove('hide');
+    setNextQuestion();
 // find notes on appendchild for id of question
 // put question on page 
 // put choices on page 
@@ -43,6 +49,10 @@ newP.innerText=questions[currentQuestion].question
  
 
 function setQuestion1() {
+    showQuestion(newP.innerText=questions[currentQuestion].question)
+}
+function showQuestion(question) {
+    questionElement.innerText = question.question
 
 }
 

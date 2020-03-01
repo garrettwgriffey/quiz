@@ -13,6 +13,13 @@
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    background-color: blue;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .btn:hover {
+    border-color: black;
   }
 
   #takeQuiz {
@@ -25,3 +32,15 @@
   #jsQuiz {
     text-align: center;
   }
+
+
+  .btnGrid {
+    grid-template-columns: repeat(2, auto);
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .hide {
+    display: none;
+  }
+  
