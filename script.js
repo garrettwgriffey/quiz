@@ -1,4 +1,13 @@
-// questions and answers
+var btnGrid = document.querySelector(".btnGrid");
+var page1 = document.querySelector(".page1");
+var page2 = document.querySelector(".page2");
+var page3 = document.querySelector(".page3");
+var page4 = document.querySelector(".page4");
+var page5 = document.querySelector(".page5");
+var page6 = document.querySelector(".page6");
+var startBtn = document.querySelector("#startButton");
+
+
 var questions = [
     {
         question: "Inside which HTML element do we put the Javascript?",
@@ -22,39 +31,26 @@ var questions = [
     }
 ]
 
-var currentQuestion = 0;
-// console.log(questions[currentQuestion].question)
-var questionElement = document.getElementById('question');
-var answerButtonsElement = document.getElementById('answerButtons');
 
-var startButton = document.getElementById('startButton');
 
-startButton.addEventListener('click', function() {
-    startGame()
-
-})
-
-function startGame() {
-// var newP=document.createElement("p")
-// newP.innerText=questions[currentQuestion].question;
-    startButton.classList.add('hide');
-    questionContainerElement.classList.remove('hide');
-    setNextQuestion();
-// find notes on appendchild for id of question
-// put question on page 
-// put choices on page 
-// start timer 
+function resetState() {
+    nextButton.classList.add('hide')
+}
+function renderQuestion() {
+    var q = questions[QuestionIndex];
 }
 
- 
 
-function setQuestion1() {
-    showQuestion(newP.innerText=questions[currentQuestion].question)
+function setNextQuestion() {
+    
 }
-function showQuestion(question) {
-    questionElement.innerText = question.question
+
+function hideQuestion() {
+    btnGrid.style.display = "none";
 
 }
+hideQuestion();
+
 
 function selectAnswer1() {
 
@@ -72,37 +68,25 @@ function setQuestion3() {
 
 }
 
-function selectAnswer3() {
+function transition1() {
+    page1; 
+    question1; 
+    page1.parentNode.replaceChild(btnGrid, page1);
+    btnGrid.style.display="block";
 
 }
 
-
-// timer 
-// <!-- <div id="timer">
-// <h2>Countdown</h2>
-// <p id="timerDisplay"></p>
-// </div>
-
-/* 
-var myVar = setInterval(function(){ myTimer() }, 1000);
-var secondlimit = 30;
-
-function myTimer() {
-if(secondlimit == 0)
-{
-    myStopFunction();
+function transition2() {
+    page2;
+    question2;
+    page1.parentNode.replaceChild(btnGrid, page1);
+    btnGrid.style.display="block";
 }
 
-document.getElementById("timerDisplay").innerHTML = '00:' + zeroPad(secondlimit,2);
-secondlimit = secondlimit  - 1;
-
+function renderQuestion() {
+    var q = questions[0].question
 }
 
-function myStopFunction() {
-    clearInterval(myVar);
-}
+startBtn.addEventListener("click", transition1);
+startBtn.addEventListener("click", transition2);
 
-function zeroPad(num, places) {
-  var zero = places - num.toString().length + 1;
-  return Array(+(zero > 0 && zero)).join("0") + num;
-}  */

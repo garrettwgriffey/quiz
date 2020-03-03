@@ -1,3 +1,7 @@
+var question1 = document.querySelector(".btnGrid");
+var page1 = document.querySelector(".page1");
+var startBtn = document.querySelector("#startButton");
+
 var questions = [
     {
         question: "Inside which HTML element do we put the Javascript?",
@@ -21,31 +25,33 @@ var questions = [
     }
 ]
 
- newP.innerText=questions[currentQuestion].question
+//  newP.innerText=questions[currentQuestion].question
 
- var currentQuestion = 0;
-// console.log(questions[currentQuestion].question)
-var questionElement = document.getElementById('question');
-var answerButtonsElement = document.getElementById('answerButtons');
+//  var currentQuestion = 0;
+// // console.log(questions[currentQuestion].question)
+// var questionElement = document.getElementById('question');
+// var answerButtonsElement = document.getElementById('answerButtons');
 
-var startButton = document.getElementById('startButton');
+// var startButton = document.getElementById('startButton');
 
-startButton.addEventListener('click', function() {
-    startGame()
+// startButton.addEventListener('click', function() {
+//     startGame()
 
-})
+// })
 
 
 // function resetState() {
 //     nectButton.classList.add('hide')
 // }
+
 function setNextQuestion() {
     
 }
 
-function setQuestion1() {
-
+function hideQuestion() {
+    question1.style.display = "none";
 }
+hideQuestion();
 
 function selectAnswer1() {
 
@@ -63,3 +69,10 @@ function setQuestion3() {
 
 }
 
+function transition1() {
+    page1; question1; page1.parentNode.replaceChild(btnGrid, page1);
+    btnGrid.style.display="block";
+
+}
+
+startBtn.addEventListener("click", transition1);
