@@ -6,6 +6,8 @@ var page4 = document.querySelector(".page4");
 var page5 = document.querySelector(".page5");
 var page6 = document.querySelector(".page6");
 var startBtn = document.querySelector("#startButton");
+var question1 = document.getElementById("question1");
+var questionNum = 0;
 
 
 var questions = [
@@ -37,7 +39,8 @@ function resetState() {
     nextButton.classList.add('hide')
 }
 function renderQuestion() {
-    var q = questions[QuestionIndex];
+    question1.innerHTML = questions[questionNum].question;
+
 }
 
 
@@ -74,6 +77,8 @@ function transition1() {
     page1.parentNode.replaceChild(btnGrid, page1);
     btnGrid.style.display="block";
 
+    
+
 }
 
 function transition2() {
@@ -83,10 +88,7 @@ function transition2() {
     btnGrid.style.display="block";
 }
 
-function renderQuestion() {
-    var q = questions[0].question
-}
 
-startBtn.addEventListener("click", transition1);
-startBtn.addEventListener("click", transition2);
+startBtn.addEventListener("click", renderQuestion);
+// startBtn.addEventListener("click", transition2);
 
