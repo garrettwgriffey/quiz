@@ -27,7 +27,7 @@ var questions = [
         correctAnswer: 0
     },
     {
-        question: "How do you write 'Hello World' in an alert box?",
+        question: "How do you display 'Hello World' in an alert box?",
         answers: ["alertBox('Hello World')", "msgBox('Hello World')", "msg('Hello World')", "alert('Hello World')"],
         correctAnswer: 3
     }
@@ -41,6 +41,13 @@ function resetState() {
 function renderQuestion() {
     question1.innerHTML = questions[questionNum].question;
 
+    for (var i=0; i < questions[questionNum].answers.length; i++) {
+        var btn = document.createElement("button");
+        btn.innerText = myQuestions[questionNumber].answers[i];
+        btn.setAttribute('class', 'btn btn-primary');
+        answers.appendChild(answer-buttons);
+        btn.addEventListener("click", checkAnswers);
+    }
 }
 
 
@@ -91,4 +98,3 @@ function transition2() {
 
 startBtn.addEventListener("click", renderQuestion);
 // startBtn.addEventListener("click", transition2);
-
