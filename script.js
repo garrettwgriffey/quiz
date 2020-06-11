@@ -36,23 +36,34 @@ var questions = [
 
 
 function resetState() {
-    nextButton.classList.add('hide')
+    nextButton.classList.add('hide');
 }
 function renderQuestion() {
+    if(questionNum < questions.length) {
+
     question1.innerHTML = questions[questionNum].question;
 
     for (var i=0; i < questions[questionNum].answers.length; i++) {
-        var btn = document.createElement("button");
-        btn.innerText = myQuestions[questionNumber].answers[i];
-        btn.setAttribute('class', 'btn btn-primary');
-        answers.appendChild(answer-buttons);
+        var btn = document.getElementById("btn" + i);
+        btn.innerText = questions[questionNum].answers[i];
+        // btn.setAttribute('class', 'btn btn-primary');
         btn.addEventListener("click", checkAnswers);
     }
+} else{
+    hideQuestion();
+    
+}
 }
 
+function checkAnswers(e) {
+    var ans = e.target.value;
+    console.log(ans);
+    setNextQuestion();
+}
 
 function setNextQuestion() {
-    
+    questionNum++;
+    renderQuestion();
 }
 
 function hideQuestion() {
@@ -61,40 +72,22 @@ function hideQuestion() {
 }
 hideQuestion();
 
-
-function selectAnswer1() {
-
-}
-
-function setQuestion2() {
-
-}
-
-function selectAnswer2() {
-
-}
-
-function setQuestion3() {
-
-}
-
 function transition1() {
     page1; 
     question1; 
     page1.parentNode.replaceChild(btnGrid, page1);
     btnGrid.style.display="block";
 
-    
-
 }
 
-function transition2() {
-    page2;
-    question2;
-    page1.parentNode.replaceChild(btnGrid, page1);
-    btnGrid.style.display="block";
-}
+// function transition2() {
+//     page2;
+//     question2;
+//     page1.parentNode.replaceChild(btnGrid, page1);
+//     btnGrid.style.display="block";
+// }
 
 
 startBtn.addEventListener("click", renderQuestion);
 // startBtn.addEventListener("click", transition2);
+
